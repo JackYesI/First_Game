@@ -33,7 +33,6 @@ void Game::initEnemies()
 {
 	this->enemy.setPosition(10.f, 10.f);
 	this->enemy.setSize(sf::Vector2f(100.f, 100.f));
-	this->enemy.setScale(sf::Vector2f(0.5f, 0.5f));
 	/*this->enemy.setFillColor(sf::Color::Red);*/
 	/*this->enemy.setOutlineColor(sf::Color::Green);
 	this->enemy.setOutlineThickness(1.f);*/
@@ -74,8 +73,9 @@ void Game::spawnEnemy()
 	/*
 	* @return void
 	*
-	* Spawns enemies and sets their colors and positions.
+	* Spawns enemies and sets their colors and positions and them at randomly.
 	* -Sets a random position
+	* -Sets a random color.
 	* -Sets a random color.
 	* -Adds enemy to the
 	*/
@@ -87,15 +87,19 @@ void Game::spawnEnemy()
 	switch (random)
 	{
 	case 1:
+		this->enemy.setSize(sf::Vector2f(20.f, 20.f));
 		this->enemy.setFillColor(sf::Color(243, 98, 153));
 		break;
 	case 2:
+		this->enemy.setSize(sf::Vector2f(43.f, 43.f));
 		this->enemy.setFillColor(sf::Color(70, 160, 212));
 		break;
 	case 3:
+		this->enemy.setSize(sf::Vector2f(25.f, 25.f));
 		this->enemy.setFillColor(sf::Color(108, 57, 150));
 		break;
 	case 4:
+		this->enemy.setSize(sf::Vector2f(50.f, 50.f));
 		this->enemy.setFillColor(sf::Color(39, 255, 254));
 		break;
 	default:
@@ -180,13 +184,22 @@ void Game::updateEnemies()
 			{
 				if (this->enemis[i].getGlobalBounds().contains(this->mousePosView))
 				{
+					
+
+					// Gain points 
+					if (this->enemis[i].getFillColor() == sf::Color(70, 160, 212))
+						this->points += 10.f;
+					else if (this->enemis[i].getFillColor() == sf::Color(243, 98, 153))
+						this->points += 43.f;
+					else if (this->enemis[i].getFillColor() == sf::Color(108, 57, 150))
+						this->points += 20.f;
+					else if (this->enemis[i].getFillColor() == sf::Color(39, 255, 254))
+						this->points += 30.f;
+					std::cout << "Points: " << this->points << "\n";
+
 					// Delete the enemy
 					deleted = true;
 					this->enemis.erase(this->enemis.begin() + i);
-
-					// Gain points 
-					this->points += 1.f;
-					std::cout << "Points: " << this->points << "\n";
 				}
 
 			}
