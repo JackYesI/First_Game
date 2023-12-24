@@ -1,5 +1,6 @@
 ﻿  Game.cpp
-D:\c++\Game_\My_SFML\My_SFML\Game.cpp(188,22): warning C4244: '+=': conversion from 'float' to 'unsigned int', possible loss of data
-  Main.cpp
-  Generating Code...
+D:\c++\Game_\My_SFML\My_SFML\Game.cpp(191,23): warning C4244: '+=': conversion from 'float' to 'unsigned int', possible loss of data
+D:\c++\Game_\My_SFML\My_SFML\Game.cpp(193,23): warning C4244: '+=': conversion from 'float' to 'unsigned int', possible loss of data
+D:\c++\Game_\My_SFML\My_SFML\Game.cpp(195,23): warning C4244: '+=': conversion from 'float' to 'unsigned int', possible loss of data
+D:\c++\Game_\My_SFML\My_SFML\Game.cpp(197,23): warning C4244: '+=': conversion from 'float' to 'unsigned int', possible loss of data
   My_SFML.vcxproj -> D:\c++\Game_\My_SFML\x64\Debug\My_SFML.exe
